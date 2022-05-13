@@ -1,0 +1,16 @@
+OSI model - Open Systems Interconnection
+  - Layer 7 : Application Layer
+  - Layer 6 : Presentation Layer
+  - Layer 5 : Session Layer
+  - Layer 4 : Transpot Layer
+  - Layer 3 : Network Layer
+  - Layer 2 : Data Link Layer
+  - Layer 1 : Physical Layer
+TCP / IP - Transmission Control Protocol / Internet Protocol
+
+UTP - Unshielded twisted pair - common cable sending data - layer 1
+NIC - network interface card - each one has a unique 48 bit ID - layer 2
+MAC address - media access control address - the 48 bit ID used for NICs
+IEEE - Institue of Electrical and Electronics Engineering - in charge of MAC addresses
+PDU - protocol data unit - the smallest unit of data for a given layer in OSI model
+frame - the PDU of layer 2 of the OSI model

@@ -3,14 +3,27 @@ OSI model - Open Systems Interconnection
   - Layer 6 : Presentation Layer
   - Layer 5 : Session Layer
   - Layer 4 : Transpot Layer
-  - Layer 3 : Network Layer
-  - Layer 2 : Data Link Layer
+  - Layer 3 : Network Layer - typically anything that deasl with network protocol (eg IP) and packets
+  - Layer 2 : Data Link Layer - typically anything that deals with MAC addresses / frames
   - Layer 1 : Physical Layer
 TCP / IP - Transmission Control Protocol / Internet Protocol
 
 UTP - Unshielded twisted pair - common cable sending data - layer 1
-NIC - network interface card - each one has a unique 48 bit ID - layer 2
-MAC address - media access control address - the 48 bit ID used for NICs
+NIC - network interface card
+  - each one has a unique 48 bit ID
+  - technically layer 1 and layer 2 
+  - layer 1 because it's the device that send and recieves physical signals over the wire
+  - layer 2 because it's operates / communicates at the MAC address / frame level with the OS
+  - process: broadcast (address ff-ff-ff-ff-ff-ff) to switch, get the correct MAC address, send frame, switch routes frame, recieve frame) 
+MAC address - media access control address - the 48 bit ID used for NICs - sometimes refered to as a physical address
 IEEE - Institue of Electrical and Electronics Engineering - in charge of MAC addresses
 PDU - protocol data unit - the smallest unit of data for a given layer in OSI model
-frame - the PDU of layer 2 of the OSI model
+frame - the PDU of layer 2 of the OSI model (made up of Recipient's MAC, Sender's MAC, Type, Data, FCS) - typically 1500 bytes but can vary
+FCS - frame check sequence - used binary math called cyclic redundancy check (CRC) to veryify the data arrived intact - is 4 bytes long
+switch - filter frames by MAC address (i.e. sends frames to only the destination MAC address in the frame)
+logical addressing - NIC broadcasting isn't feasible for large networks (eg public internet) instead of physical MAC addressing, in comes logical addressing
+subnet - larger networks are split into smaller networks called subnets
+network protocol - exists in every operating system - rules for handling incoming data (TPC/IP for example)
+packet - the PDU of layer 3 in the OSI model - is contained / wrapped by the frame - it contains (Destination IP address, Source IP address, and Data)
+IP - internet protocol - layer 3 of OSI model - it makes sure packets get to where they need to go based on IP addresses (i.e. logical addresses)
+router - connects multiple subnets - uses IP addresses to route traffic or packets. A packet can visit many routers before reaching it's desintation. Each router wraps the packet in a new frame.
